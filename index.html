@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Digital</title>
+</head>
+<style>
+    main {
+        background-color: grey;
+        width: 600px;
+        height: 600px;
+        margin: auto;
+    }
+    main, h1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .infidade{
+        padding: 10px;
+        font: normal 15pt Arial;
+        padding-left: 5px;
+        
+    }
+
+    #res{
+        background-color: white;
+        width: 300px;
+        height: 44px;
+        text-align: center;
+        margin-top: -44px;
+        margin-left: 250px;
+        font: normal 15pt Arial;
+    }
+
+    #idade{
+        width: 50px;
+        height: 40px;
+        font: normal 17pt arial;
+    }
+
+    #verificar{
+        width: 200px;
+        height: 40px;
+        margin-left: 300px;
+        font: normal 15pt arial;
+        margin-top: 10px;
+    }
+    #verificar:hover{
+        background-color: green;
+        color: white;
+    }
+
+    section{
+        font: bold 20pt arial;
+        margin-top: 50%;
+        padding-left: 27%;
+    }
+
+</style>
+
+<body>
+    <main>
+        <h1>Urna Digital</h1>
+<hr>
+
+        <div class="infidade">
+        Informe sua idade: <input type="number" name="idade" id="idade"><div id="res">Resultado...</div>
+        </div>
+        
+        <input type="button" value="verificar"
+            onclick="verificar ()" id="verificar">
+
+        <section>Em desenvolvimento...</section>
+    </main>
+
+    
+
+    <script>
+        function verificar() {
+            var idade = parseInt(window.document.getElementById('idade').value)
+            var retorno = window.document.getElementById('res');
+
+            if (idade > 15 && idade < 18) {
+                retorno.innerHTML = `<p>Voto opcional.</p>`
+                retorno.style.backgroundColor = 'greenyellow'
+                retorno.style.color = 'black'
+            }
+            else if (idade < 18) {
+                retorno.innerHTML = `<p>Não vota.</p>`
+                retorno.style.backgroundColor = 'red'
+            }
+            if (idade > 17) {
+                retorno.innerHTML = `<p>Voto obrigatório.</p>`
+                retorno.style.backgroundColor = 'green'
+                retorno.style.color = 'White'
+            }
+        }
+
+    </script>
+</body>
+
+</html>
